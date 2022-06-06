@@ -1,5 +1,5 @@
 # AllegroNetlistSwap_SKILL
-Short skill script that exports a schematic annotation script that renames temporary netlist aliases to create a single net.
+Short skill script that parses pad-to-pad DRC errors in Allegro and writes an annotation script for the schematic renaming temporary netlist aliases to merge to an existing net.
 
 This was written for situations including ATE Load/test fixtures or FPGA-based systems where optimizing pin assignments and simplifying the ratsnest pays off.  
 Simplify the ratsnest to minimize vias.   My frequent use is add test headers to a chip verification board to support automated verification without adding complexity and cost to a customer demo board.
