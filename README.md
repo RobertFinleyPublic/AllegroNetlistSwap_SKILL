@@ -5,9 +5,14 @@ This was written for situations including ATE Load/test fixtures or FPGA-based s
 
 This SKILL script is based on an example "Find_DRC.il" on support.cadence.com website.   Written by David J. Scheuring at Cadence in 1995.
 
+-----
 
 PROCESS:
 This script uses the SKILL find command to step through pin-to-pin clearance DRCs.  Allegro includes net names of the DRC objects.   We're stealing this feature and adding a protection mechanism:  One of the net name aliases must have a "TEMP" prefix or the DRC is skipped.
+
+For each net name in your existing, add a small test pad to each net.   
+
+This should be small enough to fit near the destination pin and cause a DRC with just that pin, not adjacent pins or the resulting annotation update to the schematic will be unpredictible.  When you have completed the assignment process, remove the testpads from your schematic and re-sync the design to remove them from the board.  The final result should be a clean netlist in layout.
 
 This script exports an annotation script to be imported to Orcad Capture.  There is also a second script intended to update a Concept HDL design.   I have not had the opportunity to verify its syntax as I don't use HDL.  Open the annotation script in a text editor and look for odd assignments before importing it to your schematic.
 
