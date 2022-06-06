@@ -1,7 +1,8 @@
 # AllegroNetlistSwap_SKILL
 Short skill script that exports a schematic annotation script that renames temporary netlist aliases to create a single net.
 
-This was written for situations including ATE Load/test fixtures or FPGA-based systems where optimizing pin assignments and simplifying the ratsnest pays off.  In general, PCB cost/complexity/performance improves if we are able to assign pins and simplify our ratsnest to minimize the need for vias.   Keeps power planes intact, etc.  This quickly optimizes netlist when we break out nets to headers for lights-out chip verification on the bench.   Keeps a 4-layer stackup without adding SI risk.
+This was written for situations including ATE Load/test fixtures or FPGA-based systems where optimizing pin assignments and simplifying the ratsnest pays off.  
+Simplify the ratsnest to minimize vias.   My frequent use is add test headers to a chip verification board to support automated verification without adding complexity and cost to a customer demo board.
 
 This SKILL script is based on an example "Find_DRC.il" on support.cadence.com website.   Written by David J. Scheuring at Cadence in 1995.
 
