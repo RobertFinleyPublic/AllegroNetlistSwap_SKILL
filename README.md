@@ -34,4 +34,5 @@ To annotate to Orcad Capture CIS, open a command window and type
 One problem:  All temp aliases need to have the same string length or the schemaitc update will be random.  Start with TEMP100 or TEMP1000 in your net alias.
 
 Hope this saves you time and drives a better design.
+
 Robert Finley (r_finley@hotmail.com)
