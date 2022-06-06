@@ -11,11 +11,15 @@ This SKILL script is based on an example "Find_DRC.il" on support.cadence.com we
 PROCESS:
 This script uses the SKILL find command to step through pin-to-pin clearance DRCs.  Allegro includes net names of the DRC objects.   We're stealing this feature and adding a protection mechanism:  One of the net name aliases must have a "TEMP" prefix or the DRC is skipped.
 
-For each net name in your existing, add a small test pad to each net.   
+For each net name in your existing, add a small test pad to each net.   The destination will be a (FPGA or connector) pin, defined as a single-pin-net with a "TEMP" name alias prefix.   TEMP1000, TEMP10001, TEMP1002, as example as all of these aliases must have the same length.
 
-This should be small enough to fit near the destination pin and cause a DRC with just that pin, not adjacent pins or the resulting annotation update to the schematic will be unpredictible.  When you have completed the assignment process, remove the testpads from your schematic and re-sync the design to remove them from the board.  The final result should be a clean netlist in layout.
+The test pad should be small enough to fit near the destination pin and cause a DRC with the intended pin, not adjacent pins.  If multiple DRC errors happen on a destination pin, the resulting annotation to convert the TEMP alias to a final name will be unpredictible.  
 
-This script exports an annotation script to be imported to Orcad Capture.  There is also a second script intended to update a Concept HDL design.   I have not had the opportunity to verify its syntax as I don't use HDL.  Open the annotation script in a text editor and look for odd assignments before importing it to your schematic.
+After you have completed the assignment process, remove the testpads from your schematic and re-sync the design to remove them from the board.  There should be a clean netlist in layout.
+
+This script exports an annotation script to be imported to Orcad Capture with a second script intended to update a Concept HDL design.   I don't use HDL and have not had the opportunity to verify its syntax.  
+
+View the annotation script in a text editor and look for odd assignments before importing it to your schematic.
 
 ---------------------
 To install:  Copy the skill script "swapback.il" to your %HOME%/pcbenv directory.
